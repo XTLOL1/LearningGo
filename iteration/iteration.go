@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-func iterateString(iterable string, repeatCount uint) string {
+func iterateString(iterable string, repeatCount int) string {
 	var returnValue strings.Builder
 	for i := 0; i < repeatCount; i++ {
 		returnValue.WriteString(iterable)
@@ -11,5 +14,5 @@ func iterateString(iterable string, repeatCount uint) string {
 }
 
 func main() {
-	fmt.Println(iterateString("sneeze"))
+	fmt.Println(iterateString("sneeze", 0))
 }

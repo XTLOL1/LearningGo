@@ -4,7 +4,7 @@ import "testing"
 
 func TestIteration(t *testing.T) {
 	t.Run("adding 1+1", func(t *testing.T){
-		got := iterateString("a")
+		got := iterateString("a", 5)
 		want := "aaaaa"
 		assertEquals(t, got, want)
 	})
