@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // Define a constraint for all types that support arithmetic
 type Number interface {
 	~int | ~int8 | ~int16 | ~int32 | ~int64 |
@@ -18,6 +14,10 @@ func sumNumbers[T Number](arrayNumbers []T) (sum T) {
 	return
 }
 
-func main() {
-	fmt.Println(sumNumbers([]int{1, 2, 3}))
+// acts as two dimentional array
+func sumAllNumbers[T Number](arraysToSum ...[]T) (sum []T) {
+	for _, numbers := range arraysToSum {
+		sum = append(sum, sumNumbers(numbers))
+	}
+	return
 }
