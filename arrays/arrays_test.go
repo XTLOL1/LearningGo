@@ -15,6 +15,11 @@ func TestArrays(t *testing.T) {
 		want := []int{14, 10}
 		assertEquals(t, slices.Equal(got, want), true)
 	})
+	t.Run("summing tails from slices of numbers", func(t *testing.T){
+		got := sumAllNumbersTails([]int{1}, []int{5, 5})
+			want := []int{0, 5}
+		assertEquals(t, slices.Equal(got, want), true)
+	})
 
 	//this can be done through always returning float64 values, since it's the highest level of number possible, but requires the got variable to be created as such:
 	//got := []float64{sumAllNumbers([]int{1, 2, 3, 4}), sumAllNumbers([]float32{1.0, 2.0, 3.0, 4.0}), ...}

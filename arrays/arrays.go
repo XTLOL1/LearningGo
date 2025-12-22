@@ -21,3 +21,15 @@ func sumAllNumbers[T Number](arraysToSum ...[]T) (sum []T) {
 	}
 	return
 }
+
+func sumAllNumbersTails[T Number](arraysToSum ...[]T) (sum []T) {
+	for _, numbers := range arraysToSum {
+		if len(numbers) == 0 {
+			sum = append(sum, 0)
+		} else {
+			tail := numbers[1:]
+			sum = append(sum, sumNumbers(tail))
+		}
+	}
+	return
+}
